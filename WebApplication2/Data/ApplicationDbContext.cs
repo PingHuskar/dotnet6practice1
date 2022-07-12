@@ -10,6 +10,7 @@ namespace WebApplication2.Data
 
         }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Friend> Friends { get; set; }
     }
 }
 
