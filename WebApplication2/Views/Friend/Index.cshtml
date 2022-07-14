@@ -1,11 +1,14 @@
 ﻿@*@model IEnumerable<WebApplication2.Models.Friend>*@
 @model IEnumerable<Friend>
+@{
+    ViewData["Title"] = "All Friend";
+}
 <table class="table">
      <thead>
     <tr>
-        <th scope="col">@Html.DisplayNameFor(model => model.First().FriendID)</th>
-        <th scope="col">@Html.DisplayNameFor(model => model.First().FriendName)</th>
-        <th scope="col">@Html.DisplayNameFor(model => model.First().Place)</th>
+        <th scope="col">@Html.DisplayNameFor(model => model.FriendID)</th>
+        <th scope="col">@Html.DisplayNameFor(model => model.FriendName)</th>
+        <th scope="col">@Html.DisplayNameFor(model => model.Place)</th>
         @*<th scope="col">FriendID</th>*@
         @*<th scope="col">FriendName</th>
         <th scope="col">Place</th>*@

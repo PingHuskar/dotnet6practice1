@@ -1,27 +1,29 @@
 ﻿@model Friend
-
+@{
+    ViewData["Title"] = "Update Friend Info";
+}
 <div>
     <h1>Edit Friend</h1>
     <form method="post" asp-action="Update">
-        <input asp-for="@Model.FriendID" class="form-control" hidden>
+        <input asp-for="FriendID" class="form-control" hidden>
         <div>
 
-            <label asp-for="@Model.FriendID" class="form-label"></label>
-            <input asp-for="@Model.FriendID" class="form-control" disabled>
-            <span asp-validation-for="@Model.FriendID" class="text-danger"></span>
+            <label asp-for="FriendID" class="form-label"></label>
+            <input asp-for="FriendID" class="form-control" disabled>
+            <span asp-validation-for="FriendID" class="text-danger"></span>
         </div>
 
 
         <div>
-            <label asp-for="@Model.FriendName" class="form-label"></label>
-            <input asp-for="@Model.FriendName" class="form-control">
-            <span asp-validation-for="@Model.FriendName" class="text-danger"></span>
+            <label asp-for="FriendName" class="form-label"></label>
+            <input asp-for="FriendName" class="form-control">
+            <span asp-validation-for="FriendName" class="text-danger"></span>
         </div>
         <div>
 
-            <label asp-for="@Model.Place" class="form-label"></label>
-            <input asp-for="@Model.Place" class="form-control">
-            <span asp-validation-for="@Model.Place" class="text-danger"></span>
+            <label asp-for="Place" class="form-label"></label>
+            <input asp-for="Place" class="form-control">
+            <span asp-validation-for="Place" class="text-danger"></span>
         </div>
 
         <div class="mt-5">
