@@ -1,1 +1,52 @@
-﻿
+﻿@*@model IEnumerable<WebApplication2.Models.Friend>*@
+@model IEnumerable<Friend>
+<table class="table">
+     <thead>
+    <tr>
+        <th scope="col">@Html.DisplayNameFor(model => model.First().FriendID)</th>
+        <th scope="col">@Html.DisplayNameFor(model => model.First().FriendName)</th>
+        <th scope="col">@Html.DisplayNameFor(model => model.First().Place)</th>
+        @*<th scope="col">FriendID</th>*@
+        @*<th scope="col">FriendName</th>
+        <th scope="col">Place</th>*@
+        <th scope="col">Do</th>
+
+    </tr>
+    </thead>
+    <tbody>
+@foreach (var friend in Model) {
+    <tr>
+    <td>@friend.FriendID</td>
+    <td>@friend.FriendName</td>
+    <td>@friend.Place</td>
+    @*<td>
+        <a asp-controller="friend" asp-action="Edit" asp-route-FriendID="@item.FriendID" class="btn btn-warning">Edit</a>
+        <button type="reset" class="btn btn-danger">Delete</button>
+    </td>*@
+    <td>
+        @*<a asp-action="Update" asp-route-friendId="@friend.FriendID" class="btn btn-warning">Edit</a>*@
+        <a asp-action="Update" asp-route-id="@friend.FriendID" class="btn btn-warning">Edit</a>
+        <a onclick="deleteFriend(@friend.FriendID);" class="btn btn-danger">Delete</a>
+    </td>
+    </tr>
+}
+</tbody>
+</table>
+@section Scripts {
+    <script>
+        function deleteFriend(friendId) {
+            $.ajax({
+                url: `/Friend/Delete/${friendId}`,
+                method: 'Delete',
+                success: function(data) { 
+                    if (data.success) {
+                        //alert("Deleted");
+                        //var urlToRedirect = "@Url.Action("Index")";
+                        location.reload();
+                    }
+                },
+                error: function(err) { alert(err); }
+            })
+        }
+    </script>
+}

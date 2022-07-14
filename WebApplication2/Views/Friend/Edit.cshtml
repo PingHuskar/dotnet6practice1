@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    
+}
+@*@model Friend
+<div class="row">
+        <div class="col-md-4"></div>
+    <div class="col-md-4">
+    <form method="post" asp-action="New">
+        <div class="text-danger"></div>
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+        <label asp-for="@Model.FriendID" class="control-label"></label>
+        <input type="text" class="form-control" readonly />
+        <span asp-validation-for="@Model.FriendID" class="text-danger"></span>
+        <label asp-for="@Model.FriendName" class="control-label"></label>
+        <input type="text" class="form-control" />
+        <span asp-validation-for="@Model.FriendName" class="text-danger"></span>
+        <label asp-for="@Model.Place" class="control-label"></label>
+        <input type="text" class="form-control" />
+        <span asp-validation-for="@Model.Place" class="text-danger"></span>
+        <div class="btnGroup position-relative">
+        <button type="submit" class="btn btn-success">Add</button>
+        <a asp-action="Index" class="btn btn-warning">Back</a>
+        @*<button type="reset" class="btn btn-danger">Reset</button
+        </div>
+        </div>
+    </form>
+    </div>
+    </div>*@
+@model Friend
+
+<div>
+    <h1>Edit Friend</h1>
+    <form method="post" asp-action="Edit">
+        
+        <div>
+
+            <label asp-for="@Model.FriendName" class="form-label"></label>
+            <input asp-for="@Model.FriendName" class="form-control">
+            <span asp-validation-for="@Model.FriendName" class="text-danger"></span>
+        </div>
+        <div>
+
+            <label asp-for="@Model.Place" class="form-label"></label>
+            <input asp-for="@Model.Place" class="form-control">
+            <span asp-validation-for="@Model.Place" class="text-danger"></span>
+        </div>
+
+        <div class="mt-5">
+            <button type="submit" class="btn btn-info">Save</button>
+            <a asp-action="Index" class="btn btn-danger">Back</a>
+        </div>
+    </form>
+</div>

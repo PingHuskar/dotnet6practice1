@@ -1,0 +1,32 @@
+﻿@model Friend
+
+<div>
+    <h1>Edit Friend</h1>
+    <form method="post" asp-action="Update">
+        <input asp-for="@Model.FriendID" class="form-control" hidden>
+        <div>
+
+            <label asp-for="@Model.FriendID" class="form-label"></label>
+            <input asp-for="@Model.FriendID" class="form-control" disabled>
+            <span asp-validation-for="@Model.FriendID" class="text-danger"></span>
+        </div>
+
+
+        <div>
+            <label asp-for="@Model.FriendName" class="form-label"></label>
+            <input asp-for="@Model.FriendName" class="form-control">
+            <span asp-validation-for="@Model.FriendName" class="text-danger"></span>
+        </div>
+        <div>
+
+            <label asp-for="@Model.Place" class="form-label"></label>
+            <input asp-for="@Model.Place" class="form-control">
+            <span asp-validation-for="@Model.Place" class="text-danger"></span>
+        </div>
+
+        <div class="mt-5">
+            <button type="submit" class="btn btn-info">Save</button>
+            <a asp-action="Index" class="btn btn-danger">Back</a>
+        </div>
+    </form>
+</div>

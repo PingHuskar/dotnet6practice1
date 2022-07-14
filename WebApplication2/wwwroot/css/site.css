@@ -1,3 +1,6 @@
+* {
+    user-select: none;
+}
 html {
   font-size: 14px;
 }
@@ -15,4 +18,11 @@ html {
 
 body {
   margin-bottom: 60px;
+  /*display: flex;*/
+}
+.btnGroup {
+    justify-content: space-around;
+    margin-top: 2vh;
+    text-align: right;
+    align-items: center;
 }
