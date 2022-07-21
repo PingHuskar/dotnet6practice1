@@ -13,10 +13,3 @@ namespace WebApplication2.Data
         public DbSet<Friend> Friends { get; set; }
     }
 }
-
-//DbContext
-//{
-//    DbContext(option) {
-
-//    }
-//} 
